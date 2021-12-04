@@ -58,13 +58,13 @@ public class shoppingList {
     }
                 
 
-    private void getItem(){
+    public void getItem(){
         for(int i=0;i<getItemsList().size();i++){
             System.out.printf("%d. %s%n", i+1,getItemsList().get(i));
 
         }
     }
-    private void addItem(String item){
+    public void addItem(String item){
          if (!getItemsList().contains(item)){
             getItemsList().add(item);
             System.out.printf("%s added to your your cart\n", item);
@@ -74,7 +74,7 @@ public class shoppingList {
 
             }
     }
-    private void removeItem(int ind){
+    public  void removeItem(int ind){
         if(ind>=getItemsList().size()){
             System.out.println("Incorrect item index\n");
 
@@ -85,7 +85,7 @@ public class shoppingList {
         }
         
     }
-    private void checkInput(){
+    public void checkInput(){
         setInput("");
         setInputList(new String[0]);
         Scanner myScan = new Scanner (System.in);
