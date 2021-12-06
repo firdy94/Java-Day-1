@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ibf2021.d1.AppTest" time="0.069" tests="1" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="ibf2021.d1.AppTest" time="0.063" tests="1" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
@@ -12,7 +12,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="SG"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-17.0.1.jdk/Contents/Home/lib"/>
-    <property name="sun.java.command" value="/Users/mac_sur/Desktop/Module 1/Java-Day-1/day1 workshop/day1/target/surefire/surefirebooter9713854587111575574.jar /Users/mac_sur/Desktop/Module 1/Java-Day-1/day1 workshop/day1/target/surefire 2021-12-03T12-06-46_816-jvmRun1 surefire1829363027260231596tmp surefire_05332803951868479446tmp"/>
+    <property name="sun.java.command" value="/Users/mac_sur/Desktop/Module 1/Java-Day-1/day1 workshop/day1/target/surefire/surefirebooter1451249662270310250.jar /Users/mac_sur/Desktop/Module 1/Java-Day-1/day1 workshop/day1/target/surefire 2021-12-06T12-07-42_584-jvmRun1 surefire1190566733669085999tmp surefire_015116247414126160719tmp"/>
     <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="/Users/mac_sur/Desktop/Module 1/Java-Day-1/day1 workshop/day1/target/test-classes:/Users/mac_sur/Desktop/Module 1/Java-Day-1/day1 workshop/day1/target/classes:/Users/mac_sur/.m2/repository/junit/junit/4.11/junit-4.11.jar:/Users/mac_sur/.m2/repository/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar:"/>
@@ -28,7 +28,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
-    <property name="surefire.real.class.path" value="/Users/mac_sur/Desktop/Module 1/Java-Day-1/day1 workshop/day1/target/surefire/surefirebooter9713854587111575574.jar"/>
+    <property name="surefire.real.class.path" value="/Users/mac_sur/Desktop/Module 1/Java-Day-1/day1 workshop/day1/target/surefire/surefirebooter1451249662270310250.jar"/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="java.runtime.version" value="17.0.1+12-LTS-39"/>

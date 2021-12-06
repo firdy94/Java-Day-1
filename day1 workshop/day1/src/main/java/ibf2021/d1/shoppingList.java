@@ -4,23 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class shoppingList {
+public class ShoppingList {
 
     private List<String> itemsList=new ArrayList<>(0);
     private String input= "";
     private String [] inputList= new String[0];
 
-    public shoppingList(){
+    public ShoppingList(){
 
     }
-    public shoppingList(List<String> itemsList, String input, String[] inputList){
+    public ShoppingList(List<String> itemsList, String input, String[] inputList){
         this.itemsList=itemsList;
         this.input=input;
         this.inputList=inputList;
     }
 
     public static void main(String[] args) {
-        shoppingList myList = new shoppingList();
+        ShoppingList myList = new ShoppingList();
 
         System.out.println("Welcome to your shopping cart");
         myList.checkInput();
