@@ -3,12 +3,17 @@ package ibf2021.d1;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.IOException;
+import ibf2021.d1.ShoppingCartDB.*;
 
 public class ShoppingList {
 
     private List<String> itemsList=new ArrayList<>(0);
     private String input= "";
     private String [] inputList= new String[0];
+    private String username="";
+    private int login_count=0;
+
 
     public ShoppingList(){
 
@@ -19,13 +24,27 @@ public class ShoppingList {
         this.inputList=inputList;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        String inputpathDB="/"+"cartdb"; //need to add args[0]
+        ShoppingCartDB ShopDB = new ShoppingCartDB();
+    
+
         ShoppingList myList = new ShoppingList();
 
         System.out.println("Welcome to your shopping cart");
         myList.checkInput();
+
    
         while(!myList.input.contains("exit")){
+            while(!myList.input.equals("login")){
+                if(myList.login_count<1){
+                System.out.println("Please enter the command login followed by your name ");
+                myList.checkInput();
+                }
+                else{
+                    break;
+                }
+            }
             switch(myList.input){
 
                 case "list":
@@ -45,15 +64,40 @@ public class ShoppingList {
                     myList.removeItem(Integer.parseInt(myList.inputList[1])-1);
                     myList.checkInput();
                     break;
-                
-                default:
-                    System.out.println("Please enter one of the following commands:\nlist\nadd\ndelete\nexit");
+                case "login":
+                    if (myList.login_count>=1){
+                        System.out.println("Only one user can be logged in at a time");;
+                        myList.checkInput();
+                        break;
+                    }
+                    myList.setUsername (myList.getInputList()[1]);
+                    inputpathDB=inputpathDB+"/"+myList.getUsername()+".db";
+                    List<String> existingItems= ShopDB.loadShoppingCart(inputpathDB,myList.getUsername());
+                    if (existingItems.size()!=0){
+                        for(String item: existingItems){
+                            myList.itemsList.add(item);
+                        }
+                    }
+                    myList.login_count+=1;
                     myList.checkInput();
                     break;
-                    
+                case "save":
+                    ShopDB.saveShoppingCart(myList.itemsList);
+                    System.out.println("Yout cart has been saved");
+                    myList.checkInput();
+                    break;
 
+                case "users":
+                System.out.println("the following users are registered");
+                    ShopDB.listUsers();
+                    myList.checkInput();
+                    break;
 
-            }
+                default:
+                System.out.println("Please enter one of the following commands:\nlogin\nsave\nusers\nlist\nadd\ndelete\nexit");
+                myList.checkInput();
+                break;
+                }
         }
     }
                 
@@ -117,6 +161,14 @@ public class ShoppingList {
     }
     public void setInputList(String[] input) {
         this.inputList = input;
+    }
+
+    public String getUsername(){
+        return this.username;
+    }
+
+    public void setUsername(String s){
+        this.username=s;
     }
 }
 
