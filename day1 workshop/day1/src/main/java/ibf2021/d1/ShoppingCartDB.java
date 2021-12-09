@@ -18,9 +18,9 @@ import java.util.stream.Stream;
 
 public class ShoppingCartDB {
 
-    private String defaultpathDB="/Users/mac_sur/Desktop/Module 1/Java-Day-1/day1 workshop/day1/db";
     private String inputPathDB= "";
     private String filePath=new File("").getAbsolutePath();
+    private String defaultpathDB=filePath+"/"+"db";
     private List<String> existingItems= new ArrayList<>(0);
 
     public static void main(String[] args) throws IOException {

@@ -59,8 +59,7 @@
           <configuration>
             <archive>
               <manifest>
-                <addClasspath>true</addClasspath>
-                <mainClass>ibf2021.d1.shoppingList</mainClass>
+                <mainClass>ibf2021.d1.ShoppingList</mainClass>
               </manifest>
             </archive>
           </configuration>

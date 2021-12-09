@@ -25,7 +25,7 @@ public class ShoppingList {
     }
 
     public static void main(String[] args) throws IOException {
-        String inputpathDB="/"+"cartdb"; //need to add args[0]
+        String inputpathDB=args[0]; //need to add args[0]
         ShoppingCartDB ShopDB = new ShoppingCartDB();
     
 
