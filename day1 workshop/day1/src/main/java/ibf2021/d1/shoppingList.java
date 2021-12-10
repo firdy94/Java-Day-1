@@ -18,17 +18,15 @@ public class ShoppingList {
     public ShoppingList(){
 
     }
-    public ShoppingList(List<String> itemsList, String input, String[] inputList){
+    public ShoppingList(List<String> itemsList){
         this.itemsList=itemsList;
-        this.input=input;
-        this.inputList=inputList;
+        // this.input=input;
+        // this.inputList=inputList;
     }
 
     public static void main(String[] args) throws IOException {
         String inputpathDB=args[0]; //need to add args[0]
         ShoppingCartDB ShopDB = new ShoppingCartDB();
-    
-
         ShoppingList myList = new ShoppingList();
 
         System.out.println("Welcome to your shopping cart");
@@ -48,9 +46,6 @@ public class ShoppingList {
             switch(myList.input){
 
                 case "list":
-                    if (myList.itemsList.isEmpty()){
-                        System.out.println("Your cart is empty");
-                    }
                     myList.getItem();
                     myList.checkInput();
                     break;
@@ -103,6 +98,9 @@ public class ShoppingList {
                 
 
     public void getItem(){
+        if (getItemsList().isEmpty()){
+            System.out.println("Your cart is empty");
+        }
         for(int i=0;i<getItemsList().size();i++){
             System.out.printf("%d. %s%n", i+1,getItemsList().get(i));
 
@@ -111,7 +109,7 @@ public class ShoppingList {
     public void addItem(String item){
          if (!getItemsList().contains(item)){
             getItemsList().add(item);
-            System.out.printf("%s added to your your cart\n", item);
+            System.out.printf("%s added to your cart\n", item);
             }
         else{
             System.out.printf("You have %s in your cart\n", item);

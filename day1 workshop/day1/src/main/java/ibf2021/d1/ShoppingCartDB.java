@@ -19,14 +19,9 @@ import java.util.stream.Stream;
 public class ShoppingCartDB {
 
     private String inputPathDB= "";
-    private String filePath=new File("").getAbsolutePath();
+    private String filePath=Paths.get("").toAbsolutePath().toString();
     private String defaultpathDB=filePath+"/"+"db";
     private List<String> existingItems= new ArrayList<>(0);
-
-    public static void main(String[] args) throws IOException {
-        
-       
-    }
 
 
     public List<String> loadShoppingCart(String s, String name) throws IOException{
@@ -61,6 +56,11 @@ public class ShoppingCartDB {
             bfread.close();
         }
         else{
+
+            File defaultPathFolder = Paths.get(defaultpathDB).toFile();
+            if (!defaultPathFolder.exists()){
+                defaultPathFolder.mkdir();
+            }
 
             inputPathDB=defaultpathDB+"/"+name+".db";
             inputpathDBFile=Paths.get(inputPathDB).toFile();
