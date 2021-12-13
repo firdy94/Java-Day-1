@@ -1,6 +1,6 @@
 package ibf2021.d1;
 
-import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
@@ -10,9 +10,12 @@ import java.io.PrintStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+
 
 /**
  * Unit test for simple App.
@@ -23,13 +26,13 @@ public class ShoppingListTest {
     private final PrintStream originalOut = System.out;
     private final PrintStream originalErr = System.err;
 
-@Before
+@BeforeEach
 public void setUpStreams() {
     System.setOut(new PrintStream(outContent));
     System.setErr(new PrintStream(errContent));
 }
 
-@After
+@AfterEach
 public void restoreStreams() {
     System.setOut(originalOut);
     System.setErr(originalErr);
@@ -88,8 +91,6 @@ public void restoreStreams() {
     }
     @Test public void shoppingListGetItem_negativeCondition()
     {   
-        List<String> itemList = new ArrayList<>();
-        itemList.add("Apple");
         ShoppingList myList = new ShoppingList();
         myList.getItem();
 
